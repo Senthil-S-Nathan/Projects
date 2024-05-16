@@ -1,0 +1,334 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static\Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="static\forecast.css">
+    <title>Forecast</title>
+</head>
+
+<body>
+
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="static\forecast-bg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>Forecast</h1>
+        <div class="form">
+            <form method="post" action="/forecast">
+                <label for="company_name">Company Name:</label>
+                <input type="text" id="company_name" name="company_name" required><br><br>
+
+                <label for="periods">Number of Periods:</label>
+                <input type="number" id="periods" name="forecast_days" placeholder="10" required><br><br>
+
+                <button type="submit" class="submit">Generate Forecast</button>
+            </form>
+        </div>
+        <center>
+            <div class="result">
+                <h1>Forecast Results</h1>
+                <h2 style="color: white;">Forecast Plot</h2>
+                {{ plot_div|safe }}
+            </div>
+        </center>
+    </div>
+
+</body>
+
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static\Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="static\chart.css">
+    <title>Stock Price</title>
+    <link rel="stylesheet" type="text/css" href="static/bootstrap.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <link href="static/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="static/style.css" rel="stylesheet" />
+    <link href="static/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="static\bg_video.mp4" type="video/mp4">
+            browser does not support the video tag.
+        </video>
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                    <a class="navbar-brand" href="{{url_for('home')}}">
+                        <span>
+                            PricePredict
+                        </span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class=""> </span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav  ">
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('chart')}}">Open & Close Price</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('forecast')}}">Forecast</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('about')}}"> About Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('why')}}">Why Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('team')}}">Team</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('logout')}}"> Logout</a>
+                            </li>
+                            
+                            </form>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <h1>Stock Open & Close Price Chart</h1>
+        <div class="form">
+            <form method="POST" action="{{url_for('chart')}}">
+                <label for="company_name">Company Name:</label>
+                <select id="company_name" name="company_name" required>
+                    {% for row in csv_data %}
+                        <option value="{{ row[1] }}">{{ row[2] }}</option>
+                    {% endfor %}
+                </select><br><br>
+            
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date" name="start_date" required><br><br>
+            
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date" name="end_date" required><br><br>
+            
+                <button type="submit" class="submit">Generate Chart</button>
+            </form>
+            
+        </div>
+
+        <center>
+            <div class="result">
+                {{ plot_div | safe }}
+            </div>
+        </center>
+
+    </div>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="icon" href="static\Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="static\forecast.css">
+  <title>Stock Price</title>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" href="static\Logo.png" type="image/x-icon">
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="static/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="static/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="static/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="static/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="static/hero-bg.png" alt="">
+      </div>
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="{{url_for('home')}}">
+            <span>
+              PricePredict
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <!-- <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('home')}}">Home</a>
+                  </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('chart')}}">Open & Close Price</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('forecast')}}">Forecast</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('about')}}"> About Us</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('why')}}">Why Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('team')}}">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('logout')}}"> Logout</a>
+              </li>
+              <!-- <form class="form-inline">
+                      <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button> -->
+              </form>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <div class="ak">
+
+    <h1>Forecast</h1>
+    <div class="form">
+      <form method="post" action="/forecast">
+        <label for="company_name">Company Name:</label>
+        <select class="select" name="company_name" required>
+          {% for row in csv_data %}
+          <option class="option" value="{{ row[0] }}">{{ row[1] }}</option>
+          {% endfor %}
+        </select>
+        <br><br>
+        <!-- <input type="text" id="company_name" name="company_name" required><br><br> -->
+
+        <label for="periods">Number of Periods:</label>
+        <input type="number" id="periods" name="forecast_days" required><br><br>
+
+        <button type="submit" class="submit">Generate Forecast</button>
+      </form>
+    </div><br><br>
+    {% if show_table_button %}
+
+    <center>
+      <div class="result">
+        {% if plot_div %}
+        <h2>Forecast Plot of {{ cname }}</h2><br>
+        {{ plot_div | safe }}
+        {% endif %}
+        <br><br>
+        <form method="POST" action="{{ url_for('forecast_table') }}">
+          <input type="hidden" name="company_name" value="{{ company_name }}">
+          <input type="hidden" name="forecast_days" value="{{ periods }}">
+          <button type="submit" name="view_table" class="submit">View in Table</button>
+
+        </form>
+
+      </div>
+    </center>
+    {% endif %}
+
+  </div>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved
+        <!-- <a href="#">stockpy pvt limit</a> -->
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <!-- <script type="text/javascript" src="jquery-3.4.1.min.js"></script> -->
+  <script src="{{ url_for('static', filename='js/jquery-3.js') }}"></script>
+
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <!-- bootstrap js -->
+  <!-- <script type="text/javascript" src="bootstrap.js"></script> -->
+  <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <!-- <script type="text/javascript" src="custom.js"></script> -->
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>

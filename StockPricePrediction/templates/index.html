@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="coderell" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static\Logo.png" type="image/x-icon">
+    <title>Stock Price Prediction</title>
+    <link rel="stylesheet" href="static/index.css">
+    <!-- google font  -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:500,600,700,900&display=swap" rel="stylesheet">
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Tweenmax GSAP  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <div id='hideMe'>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <h3 style="color: rgb(3, 247, 15);"> {{ message }} </h3>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="overlay first"></div>
+        <div class="overlay second"></div>
+        <div class="overlay third"></div>
+
+
+        <img src="" alt="" class="product-img">
+
+
+        <div class="product-text">
+            <h1 class="product-title">Predict</h1>
+        </div>
+
+        <div class="product-desc">
+            <p>Invest smarter. not harder</p>
+            <form action="{{url_for('login')}}">
+                <button type="submit">Sign in / Sign up</button>
+            </form>
+
+        </div>
+
+        <div class="size">
+
+        </div>
+
+        <div class="bottom-img"></div>
+
+
+
+
+    </div>
+
+    <script>
+        TweenMax.to('.first', 1.5, {
+            delay: .2,
+            left: '-100%',
+            ease: Expo.easeInOut
+        })
+
+        TweenMax.to('.second', 1.5, {
+            delay: .4,
+            left: '-100%',
+            ease: Expo.easeInOut
+        })
+
+        TweenMax.to('.third', 1.5, {
+            delay: .6,
+            left: '-100%',
+            ease: Expo.easeInOut
+        })
+
+        TweenMax.from('.bottom-img', 1, {
+            delay: 2.4,
+            opacity: 0,
+            x: -20,
+            ease: Expo.easeInOut
+        })
+
+        TweenMax.from('.product-title', 3, {
+            delay: 2.2,
+            opacity: 0,
+            y: 50,
+            ease: Expo.easeInOut
+        })
+
+        TweenMax.from('.product-desc p', 3, {
+            delay: 3.5,
+            opacity: 0,
+            y: -50,
+            ease: Expo.easeInOut
+        })
+        TweenMax.from('.product-desc button', 3, {
+            delay: 4.9,
+            opacity: 0,
+            y: -50,
+            ease: Expo.easeInOut
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static\Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="static\chart.css">
+    <title>Stock Price</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap");
+
+        body {
+            text-align: center;
+            font-family: "Open Sans", sans-serif;
+            background-color: #4f470f;
+            color: white;
+        }
+
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            /* Centering the table */
+            border-radius: 10px;
+            /* Adding rounded corners */
+            overflow: hidden;
+            /* Hide overflowing shadows */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            /* Adding shadow */
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: black;
+        }
+
+        /* Hover effect for table rows */
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Add transition for smoother hover effect */
+        tr:hover td {
+            transition: background-color 0.3s ease;
+        }
+
+        th:hover,
+        td:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Add hover effect */
+        }
+
+        th,
+        td {
+            transition: background-color 0.3s ease;
+            /* Smooth transition on hover */
+        }
+
+        h2 {
+            font-size: 24px;
+            transition: text-shadow 0.3s ease;
+            /* Smooth transition */
+        }
+
+        h2:hover {
+            text-shadow: 0 0 20px yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Table View</h1>
+    <h2>Company Name: {{ cname }}</h2>
+    <center>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Open Price in $</th>
+                    <th>Close Price in $</th>
+                    <!-- Add more headers if needed -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, row in data.iterrows() %}
+                <tr>
+                    <td>{{ index }}</td>
+                    <td>{{ row['Open'] }}</td>
+                    <td>{{ row['Close'] }}</td>
+                    <!-- Add more columns if needed -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+</body>
+
+</html>

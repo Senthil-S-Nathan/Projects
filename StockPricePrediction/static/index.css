@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url(graph.jpg); 
+    background-size: cover;
+    background-position: center;
+    display:absolute;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+#hideMe {
+    -webkit-animation: cssAnimation 5s forwards; 
+    animation: cssAnimation 5s forwards;
+}
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.product-text {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.product-title {
+    color: #000000;
+    font-weight: 0;
+    letter-spacing: 0px;
+    font-size: 160px;
+}
+
+.product-desc {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: -500px;
+    z-index: 2;
+}
+
+.product-desc p {
+    position: absolute;
+    font-size: 22px;
+    top:-470px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.product-desc button {
+    margin-top: 10px;
+    background: #fabc03;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    border: none;
+    border-radius: 30px;
+}
+.product-desc button:hover {
+    cursor: pointer;
+  }
+
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    z-index: 2;
+    background: #fff;
+}
+
+.first {
+    top: 0;
+}
+
+.second {
+    top: 33.3%;
+}
+
+.third {
+    top: 66.6%;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="static/reg.css">
+  <link rel="icon" href="static\Logo.png" type="image/x-icon">
+  <title>Registration</title>
+</head>
+
+<body>
+  <section>
+    <div class="form-box">
+      <div class="form-value">
+
+        <h2>Registration</h2>
+        <form action="{{ url_for('Signup') }}" method="POST">
+
+          <!-- Name input box -->
+          <div class="inputbox">
+            <ion-icon name="person-outline"></ion-icon>
+            <input type="text" name="user_name" required>
+            <label for="user_name">User Name</label>
+          </div>
+
+          <!-- Email input box -->
+          <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" name="mail" required>
+            <label for="mail">Email</label>
+          </div>
+
+          <!-- Password input box -->
+          <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" name="password1" id="password1" required>
+            <label for="password1">Password</label>
+          </div>
+
+          <!-- Confirm Password input box -->
+          <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" name="password2" id="password2" required>
+            <label for="password2">Confirm Password</label>
+          </div>
+
+          <!-- Submit button -->
+          <input type="submit" value="Submit" class="button">
+
+        </form>
+
+        <!-- Login link section -->
+        <div class="register">
+          <p>Already have an account? </p>
+          <a href="{{ url_for('login') }}">Log in here!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ionicons scripts -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

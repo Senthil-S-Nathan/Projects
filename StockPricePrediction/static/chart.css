@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap");
+
+body{
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.ak{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #4f470f, #362f09);
+    height: 100%;
+    padding: 20px;
+}
+
+.form {
+    backdrop-filter: blur(30px);
+    color: white;
+    padding: 15px;
+    border-style: 1px solid;
+    width: fit-content;
+    text-align: center;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: #cfcccc 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    font-weight: bold;
+}
+
+.submit{
+    background-color: rgb(45, 133, 128);
+    color: rgb(14, 14, 13);
+    border-radius: 10px;
+    width: 120px;
+    cursor: pointer;
+    font-weight: bold;
+}
+input {
+    border-radius: 5px;
+    margin: 5px 0;
+    width: 130px;
+    float: right;
+}
+
+.result {
+    padding: 30px;
+    width: 80%;
+    height: auto;
+}
+
+.footer_section {
+    position: relative;
+    background-color: #ffffff;
+    text-align: center;
+}
+select{
+    width: 130px;
+    border-radius: 5px;
+}
+option {
+    /* Basic styles for the options */
+    /* Note: These styles may not be fully supported across all browsers */
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    overflow-wrap: break-word; /* Allow long words to break into multiple lines */
+}
+
+/*vnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn*/
+
+.submit:hover {
+    background-color: rgb(34, 167, 160);
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+input:hover, select:hover {
+    border-color: rgb(34, 167, 160);
+    transition: border-color 0.3s ease;
+}
+
+.form, .result {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form:hover, .result:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.submit {
+    animation: pulse 2s infinite;
+}
+
+
+
+.form, .result {
+    transition: box-shadow 0.3s ease;
+}
+
+.form:hover, .result:hover{
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 3rem;
+    animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1:hover {
+    font-weight: bold;
+    text-shadow: 0 0 20px yellow;
+}
+
