@@ -10,7 +10,7 @@ The primary objective of this project is to create a user-friendly platform that
 
 Key Features:
 
-1. User Authentication:The web application includes a user authentication system that allows users to sign up, log in, and log out securely. Passwords are hashed using the generate_password_hash function from the Werkzeug library to enhance security.
+1. User Authentication:The web application includes a user authentication system that allows users to sign up, log in, and log out securely. Passwords are hashed using the 'generate_password_hash' function from the Werkzeug library to enhance security.
 
 2. Data Visualization: Users can visualize historical stock data using interactive charts generated with Plotly and Matplotlib libraries. The application provides options to plot open and close prices of selected stocks over a specified time period, facilitating comprehensive analysis of stock trends.
 
@@ -18,7 +18,7 @@ Key Features:
 
 4. Data Validation: The application incorporates robust data validation mechanisms to ensure the integrity and reliability of user inputs. It checks for duplicate accounts during registration, validates email addresses, and ensures that passwords match.
 
-5. Error Handling: Error handling is implemented throughout the application to provide informative feedback to users. Whether it is an invalid email address, incorrect login credentials, or missing stock symbols, users are notified promptly with appropriate error messages.
+5. Error Handling: Error handling is implemented throughout the application to provide informative feedback to users. Whether it's an invalid email address, incorrect login credentials, or missing stock symbols, users are notified promptly with appropriate error messages.
 
 Technical Implementation:
 
@@ -28,7 +28,7 @@ MySQL Database: MySQL is utilized to store user account information securely. Th
 
 Machine Learning with Prophet: Prophet, a time series forecasting library developed by Facebook, is integrated into the application for predicting future stock prices. The library utilizes an additive regression model to analyze historical data and generate forecasts with uncertainty intervals.
 
-Interactive Visualization with Plotly: Plotly is employed for creating interactive and visually appealing charts that enhance the user experience. Plotlys integration with Flask enables seamless rendering of dynamic plots within web pages.
+Interactive Visualization with Plotly: Plotly is employed for creating interactive and visually appealing charts that enhance the user experience. Plotly's integration with Flask enables seamless rendering of dynamic plots within web pages.
 
 Conclusion:
 
