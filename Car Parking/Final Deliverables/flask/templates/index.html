@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home page</title>
+    <style>
+        body {
+            background-image: url(static/1.jpg);
+      background-size:1550px 780px;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            opacity:2000;
+        }
+
+        .cls {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .cls ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            text-align: right; /* Align the list to the right */
+        }
+
+        .cls li {
+            display: inline-block; /* Display list items horizontally */
+        }
+
+        .cls li a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .cls li a:hover {
+            background-color: #111;
+        }
+
+        h1 {
+        
+                  width:1650px;
+                    display:flex;
+                  height:500px;
+                    font-size: 32px;
+                    color:#c0c0c0;
+                    justify-content:center;
+                    align-items:center;
+                
+                
+              }
+              
+    </style>
+</head>
+
+<body>
+    <div class="cls">
+        <ul>
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+            <li><a href="{{url_for('register')}}">Register</a></li>
+            <li><a href="{{url_for('About_Us')}}">About_US</a></li>
+        </ul>
+    </div>
+    <h1><b>Revolutionizing Parking<br>AI enable Car Parking With OpenCV</b></h1>
+
+</body>
+
+</html>

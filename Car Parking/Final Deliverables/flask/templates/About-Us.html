@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body{
+            background-image:url(static/1.jpg)
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .navbar li {
+            float: right;
+        }
+
+        .navbar li a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar li a:hover {
+            background-color: #111;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 32px;
+            color: black;
+        }
+
+        p {
+            margin: 20px;
+            color:white;
+            font-size:20px;
+            
+           
+      
+        }
+    </style>
+</head>
+
+<body  >
+    <div class="navbar">
+        <ul>
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+            <li><a href="{{url_for('register')}}">Register</a></li>
+            <li><a href="{{url_for('About_Us')}}">About_US</a></li>
+        </ul>
+    </div>
+
+    <h1>About Us</h1><br><br>
+    <p>Welcome to our AI-enabled car parking system! We are dedicated to revolutionizing the way car parking is managed using cutting-edge artificial intelligence technology. Our system combines advanced computer vision algorithms, machine learning techniques, and real-time data processing to provide an efficient and seamless parking experience.</p>
+
+    <p>With our AI-enabled car parking system, drivers can enjoy the convenience of automated parking space detection, guidance, and reservation. Our system utilizes cameras and sensors to monitor parking areas, detect available parking spaces, and guide drivers to the nearest vacant spot. By leveraging AI algorithms, we optimize parking space utilization and reduce congestion, saving valuable time for both drivers and parking lot operators.</p>
+
+    <p>Additionally, our system offers features such as mobile app integration, online payment options, and data analytics for parking lot management. Parking lot operators can gain valuable insights into parking patterns, occupancy rates, and revenue generation, enabling them to make informed decisions and enhance overall efficiency.</p>
+
+    <p>At our company, we are passionate about improving the parking experience for drivers and simplifying parking management for businesses. With our AI-enabled car parking system, we aim to eliminate the frustrations associated with finding parking spaces, maximize parking availability, and create a more sustainable and intelligent parking ecosystem.</p>
+</body>
+
+</html>
